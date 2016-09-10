@@ -4,7 +4,12 @@
   "description": "A tiny CSS for generated HTML or Markdown content",
   "main": "wysiwyg.css",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "autoprefix": "postcss --use autoprefixer --output wysiwyg.css wysiwyg.css",
+    "build": "npm run clean && npm run build-wysiwyg && npm run autoprefix",
+    "build-main": "node-sass --output-style expanded --output ./ main.sass --outFile main.css",
+    "build-wysiwyg": "node-sass --output-style expanded --output ./ wysiwyg.sass --outFile wysiwyg.css",
+    "clean": "rm -rf wysiwyg.css",
+    "start": "npm run build-main -- --watch"
   },
   "repository": {
     "type": "git",
@@ -22,5 +27,11 @@
   "bugs": {
     "url": "https://github.com/jgthms/wysiwyg.css/issues"
   },
-  "homepage": "https://github.com/jgthms/wysiwyg.css#readme"
+  "homepage": "https://github.com/jgthms/wysiwyg.css#readme",
+  "dependencies": {
+    "autoprefixer": "^6.4.1",
+    "minireset.css": "0.0.2",
+    "node-sass": "^3.9.3",
+    "postcss-cli": "^2.6.0"
+  }
 }

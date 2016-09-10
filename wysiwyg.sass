@@ -1,0 +1,62 @@
+$blue: #2478ff
+$purple: #9524ff
+
+$grey-light: #777
+$grey: #333
+$grey-dark: #111
+
+.wysiwyg
+  color: $grey
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif
+  line-height: 1.6
+  // Inlines
+  a
+    color: $blue
+    &:visited
+      color: $purple
+  strong
+    color: $grey-dark
+  // Blocks
+  blockquote, ol, p, pre, ul
+    margin-bottom: 1em
+    &:last-child
+      margin-bottom: 0
+  // Headers
+  h1, h2, h3, h4, h5, h6
+    color: $grey-dark
+    font-weight: bold
+    line-height: 1.2
+    margin-bottom: 1em
+    margin-top: 1em
+    &:first-child
+      margin-top: 0
+  h1
+    font-size: 2.4em
+    margin-bottom: 0.4166em
+  h2
+    font-size: 2em
+    margin-bottom: 0.5em
+  h3
+    font-size: 1.6em
+    margin-bottom: 0.625em
+  h4
+    font-size: 1.2em
+    margin-bottom: 0.8333em
+  h5
+    font-size: 1.1em
+    margin-bottom: 0.9091em
+  h6
+    font-size: 1em
+    margin-bottom: 1em
+  // Code
+  code,
+  pre
+    background: #eee
+    font-family: "Inconsolata", monospace
+    font-size: 0.8em
+  pre
+    overflow: auto
+    padding: 1em 1.2em
+    code
+      background: transparent
+      font-size: 1em
