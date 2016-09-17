@@ -1,11 +1,20 @@
 @import "node_modules/minireset.css/minireset.sass"
 @import "wysiwyg.sass"
 
+$primary: #2478ff
+
 body
+  font-family: "Karla", "Roboto", "Helvetica", "Arial", sans-serif
+
+.header
+  background-color: $primary
+  text-align: center
+
+.wysiwyg
   margin: 0 auto
-  max-width: 780px
+  max-width: 720px
   padding: 20px
 
 @media screen and (min-width: 600px)
-  body
+  .wysiwyg
     padding: 40px

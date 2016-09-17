@@ -8,12 +8,12 @@
     <link rel="stylesheet" type="text/css" href="main.css">
   </head>
   <body>
-    <!-- <header>
+    <header class="header">
       <h1>wysiwyg.css</h1>
-      <p>Style your TinyMCE or Markdown with a single class</p>
-    </header> -->
+      <p>Style your TinyMCE or Markdown content with a single class</p>
+    </header>
+
     <main class="wysiwyg">
-      <h1>Hello World</h1>
       <p>
         <code>wysiwyg.css</code> file is a simple <strong>collection of styles</strong> targeted at HTML elements generated from a <abbr title="What You See Is What You Get">WYSIWYG</abbr> editor (like TinyMCE) or Markdown.
       </p>
@@ -31,14 +31,6 @@
 &lt;div class="wysiwyg"&gt;
   &lt;!-- Your generated HTML --&gt;
 &lt;/div&gt;
-</pre>
-<pre>
-// Spacing
-$margin: 1.4em
-
-// Typography
-$family-primary: -apple-system, "Helvetica", "Arial", sans-serif
-$family-monospace: "Inconsolata", monospace
 </pre>
       <h2>What it styles</h2>
       <h3>Blocks</h3>
@@ -258,6 +250,10 @@ $family-monospace: "Inconsolata", monospace
           </tr>
         </tbody>
       </table>
+      <h2>Options</h2>
+      <p>
+        To provide flexibility, <code>wysiwyg.css</code> is written in <a href="#">Sass</a> and comes with a list of <strong>variables</strong> and <strong>options.</strong>
+      </p>
     </main>
   </body>
 </html>

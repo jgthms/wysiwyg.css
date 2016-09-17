@@ -365,13 +365,22 @@ th {
 }
 
 body {
+  font-family: "Karla", "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+.header {
+  background-color: #2478ff;
+  text-align: center;
+}
+
+.wysiwyg {
   margin: 0 auto;
-  max-width: 780px;
+  max-width: 860px;
   padding: 20px;
 }
 
 @media screen and (min-width: 600px) {
-  body {
+  .wysiwyg {
     padding: 40px;
   }
 }
