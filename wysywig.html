@@ -32,6 +32,14 @@
   &lt;!-- Your generated HTML --&gt;
 &lt;/div&gt;
 </pre>
+<pre>
+// Spacing
+$margin: 1.4em
+
+// Typography
+$family-primary: -apple-system, "Helvetica", "Arial", sans-serif
+$family-monospace: "Inconsolata", monospace
+</pre>
       <h2>What it styles</h2>
       <h3>Blocks</h3>
       <ul>
@@ -80,6 +88,14 @@
           and
           <code>&lt;cite&gt;</code>
         </li>
+        <li>
+          Other:
+          <code>&lt;small&gt;</code>
+          <code>&lt;time&gt;</code>
+          <code>&lt;sub&gt;</code>
+          <code>&lt;sup&gt;</code>
+          <code>&lt;hr&gt;</code>
+        </li>
       </ul>
       <h2>How it looks</h2>
       <p>
@@ -102,18 +118,78 @@
         <time datetime="2001-05-15T19:00" title="2001-05-15T19:00">timestamps</time>,
         words with<sub>sub</sub>and<sup>sup</sup>text
       </p>
-      <p>You also have <strong>lists</strong>:</p>
+      <p>
+        You also have horizontal breaks.
+      </p>
+      <hr>
+      <p>You also have <strong>unordered lists</strong>:</p>
       <ul>
         <li>
-          You can also use unordered lists
+          From basic lists
           <ul>
-            <li>With nested items</li>
-            <li>That have a different bullet point</li>
+            <li>
+              With nested items
+              <ul>
+                <li>
+                  That have a different bullet points
+                  <ul>
+                    <li>
+                      At each level
+                      <ul>
+                        <li>
+                          Up to
+                          <ul>
+                            <li>The 6th level</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
           </ul>
         </li>
         <li>With items that can spawn multiple lines</li>
         <li>Like this one: lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at aliquet orci. Curabitur eget porttitor sem. Aenean eu convallis diam. Sed nibh massa, rhoncus id interdum pellentesque, congue ac erat.</li>
       </ul>
+      <p>
+        And <strong>ordered lists</strong>:
+      </p>
+      <ol>
+        <li>
+          Step one
+          <ol>
+            <li>
+              Side step one
+              <ol>
+                <li>
+                  Side step two
+                  <ol>
+                    <li>
+                      Site step three
+                      <ol>
+                        <li>
+                          Side step four
+                          <ol>
+                            <li>Side step five</li>
+                          </ol>
+                        </li>
+                      </ol>
+                    </li>
+                  </ol>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+        <li>Step two</li>
+        <li>????</li>
+        <li>PROFIT!!!</li>
+      </ol>
+      <p>
+        And even <strong>definition lists</strong>:
+      </p>
       <dl>
         <dt>Name</dt>
         <dd>Godzilla</dd>
@@ -125,9 +201,25 @@
         <dd>Green</dd>
       </dl>
       <blockquote>
-        You can also use the <code>blockquote</code> element with or without paragraphs.
+        You can also use the <code>blockquote</code> element.
+        It can be used with or without paragraphs.
       </blockquote>
-
+      <p>
+        The <strong>figure</strong> and related <em>figcaption</em> elements are supported:
+      </p>
+      <figure>
+        <a href="#">
+          <img src="http://jgthms.com/web-design-in-4-minutes/web-design-in-4-minutes.png" alt="Web design in 4 minutes" width="1200" height="630">
+        </a>
+        <figcaption>A full width image</figcaption>
+      </figure>
+      <figure>
+        <img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png" alt="An awesome picture" width="62" height="71">
+        <figcaption>A small image</figcaption>
+      </figure>
+      <p>
+        <strong>Tables</strong> are supported: cells, rows, head, body, and foot are styled.
+      </p>
       <table>
         <thead>
           <tr>
