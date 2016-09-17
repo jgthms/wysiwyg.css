@@ -1,62 +1,203 @@
+// Colours
 $blue: #2478ff
 $purple: #9524ff
 
-$grey-light: #777
-$grey: #333
-$grey-dark: #111
+$grey-light: hsl(0, 0%, 50%)
+$grey: hsl(0, 0%, 20%)
+$grey-dark: hsl(0, 0%, 10%)
+
+$background: hsl(0, 0%, 95%)
+$border: hsl(0, 0%, 90%)
+
+$text: $grey
+$text-code: $grey
+$text-strong: $grey-dark
+$text-headings: $grey-dark
+$text-blockquote: $grey-light
+
+$link: $blue
+$link-hover: $blue
+$link-visited: $purple
+
+$background-ins: lime
+$background-mark: yellow
+
+$table-background: hsl(0, 0%, 100%)
+$table-background-even: hsl(0, 0%, 98%)
+$table-background-hover: hsl(0, 0%, 96%)
+$table-thead: $grey-light
+$table-thead-background: $background
+$table-border: $border
+
+// Spacing
+$margin: 1.4em
+
+// Typography
+$family-primary: -apple-system, "Helvetica", "Arial", sans-serif
+$family-monospace: "Inconsolata", monospace
+
+$weight-strong: 700
+$weight-headings: 700
+
+// Options
+$inherit-colors: false
+$inherit-fonts: false
+$heading-borders: false
+$show-underline: false
+$visited-links: false
+
+// Mixins
+=cell($font-size)
+  font-size: #{$font-size}em
+  padding: (0.6em / $font-size) (0.8em / $font-size)
+
+=color($color)
+  @if not ($inherit-colors)
+    color: $color
+
+=heading($font-size, $with-border: false, $is-first: false)
+  font-size: #{$font-size}em
+  @if $is-first
+    margin-bottom: (($margin * 2) / $font-size)
+  @else
+    margin-bottom: ($margin / $font-size)
+  margin-top: (($margin * 2) / $font-size)
+  @if $heading-borders and $with-border
+    border-bottom: 1px solid $border
+    @if $is-first
+      padding-bottom: (($margin * 2) / $font-size)
+    @else
+      padding-bottom: ($margin / $font-size)
 
 .wysiwyg
-  color: $grey
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif
+  +color($text)
   line-height: 1.6
+  @if not ($inherit-fonts)
+    font-family: $family-primary
   // Inlines
   a
-    color: $blue
-    &:visited
-      color: $purple
+    +color($link)
+    @if ($show-underline)
+      text-decoration: underline
+    @else
+      text-decoration: none
+      &:hover
+        border-bottom: 1px solid
+    @if ($visited-links)
+      &:visited
+        color: $link-visited
+  abbr
+    border-bottom: 1px dotted
+    cursor: help
+  cite
+    font-style: italic
+  ins
+    background-color: $background-ins
+    text-decoration: none
+  mark
+    background-color: $background-mark
+  small
+    font-size: 0.8em
   strong
-    color: $grey-dark
+    +color($text-strong)
+    font-weight: $weight-strong
+  sub,
+  sup
+    font-size: 0.8em
+  sub
+    vertical-align: sub
+  sup
+    vertical-align: super
+  time
+    border-bottom: 1px dotted
+    cursor: help
   // Blocks
-  blockquote, ol, p, pre, ul
-    margin-bottom: 1em
+  p, dl, ol, ul, blockquote, pre, table
+    margin-bottom: $margin
     &:last-child
       margin-bottom: 0
-  // Headers
+  // Headings
   h1, h2, h3, h4, h5, h6
-    color: $grey-dark
-    font-weight: bold
+    color: $text-headings
+    font-weight: $weight-headings
     line-height: 1.2
-    margin-bottom: 1em
-    margin-top: 1em
     &:first-child
       margin-top: 0
   h1
-    font-size: 2.4em
-    margin-bottom: 0.4166em
+    +heading(2.4, true, true)
+    line-height: 1
   h2
-    font-size: 2em
-    margin-bottom: 0.5em
+    +heading(1.8, true)
+    line-height: 1.1
   h3
-    font-size: 1.6em
-    margin-bottom: 0.625em
+    +heading(1.4)
   h4
-    font-size: 1.2em
-    margin-bottom: 0.8333em
+    +heading(1.2)
   h5
-    font-size: 1.1em
-    margin-bottom: 0.9091em
+    +heading(1.1)
   h6
-    font-size: 1em
-    margin-bottom: 1em
+    +heading(1)
+  // Lists
+  dd
+    margin-left: 1em
+  ol,
+  ul
+    list-style-position: outside
+    margin-left: 1.2em
+  ol
+    list-style-type: decimal
+  ul
+    list-style-type: disc
+    ul
+      list-style-type: circle
+  // Blockquote
+  blockquote
+    border-left: 4px solid $border
+    color: $text-blockquote
+    padding: 0.6em 1.2em
+    p
+      margin-bottom: 0
   // Code
   code,
+  kbd,
+  samp,
   pre
-    background: #eee
-    font-family: "Inconsolata", monospace
-    font-size: 0.8em
+    background-color: $background
+    color: $text-code
+    font-size: 0.9em
+    @if not ($inherit-fonts)
+      font-family: $family-monospace
+  code,
+  kbd,
+  samp
+    padding: 0.2em 0.5em 0.3em
+    vertical-align: baseline
   pre
     overflow: auto
     padding: 1em 1.2em
     code
-      background: transparent
+      background: none
       font-size: 1em
+  // Tables
+  table
+    width: 100%
+  th,
+  td
+    +cell(1)
+    border: 1px solid $border
+    line-height: 1.2
+  thead,
+  tfoot
+    tr
+      background-color: $table-thead-background
+    th,
+    td
+      +cell(0.9)
+      color: $table-thead
+  tbody
+    tr
+      background-color: $table-background
+      &:nth-child(even)
+        background-color: $table-background-even
+      &:hover
+        background-color: $table-background-hover

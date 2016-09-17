@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>wysiwyg.css</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+    <!-- <header>
+      <h1>wysiwyg.css</h1>
+      <p>Style your TinyMCE or Markdown with a single class</p>
+    </header> -->
+    <main class="wysiwyg">
+      <h1>Hello World</h1>
+      <p>
+        <code>wysiwyg.css</code> file is a simple <strong>collection of styles</strong> targeted at HTML elements generated from a <abbr title="What You See Is What You Get">WYSIWYG</abbr> editor (like TinyMCE) or Markdown.
+      </p>
+      <p>
+        Its purpose are both <strong>readibility</strong> and <strong>simplicity</strong>.
+      </p>
+      <p>
+        And as <code>wysiwyg.css</code> is easily <strong>customisable</strong>, it also supports <a href="#">themes</a>.
+      </p>
+      <h2>How it works</h2>
+      <p>
+        You just add the <code>.wysiwyg</code> CSS class to a <strong>container</strong>, and it will style all its child elements:
+      </p>
+<pre>
+&lt;div class="wysiwyg"&gt;
+  &lt;!-- Your generated HTML --&gt;
+&lt;/div&gt;
+</pre>
+      <h2>What it styles</h2>
+      <h3>Blocks</h3>
+      <ul>
+        <li>Headings: from <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code></li>
+        <li>Paragraphs <code>&lt;p&gt;</code></li>
+        <li>Lists: <code>&lt;ol&gt;</code> and <code>&lt;ul&gt;</code></li>
+        <li>Blockquotes <code>&lt;blockquote&gt;</code></li>
+        <li>Tables <code>&lt;table&gt;</code> <code>&lt;tr&gt;</code> <code>&lt;th&gt;</code> and <code>&lt;td&gt;</code></li>
+        <li>Pre <code>&lt;pre&gt;</code></li>
+        <li>Figures <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code></li>
+      </ul>
+      <h3>Inline elements</h3>
+      <ul>
+        <li>
+          Links:
+          <code>&lt;a&gt;</code>
+        </li>
+        <li>
+          Semantic:
+          <code>&lt;strong&gt;</code>
+          and
+          <code>&lt;em&gt;</code>
+        </li>
+        <li>
+          Code:
+          <code>&lt;code&gt;</code>
+          <code>&lt;kbd&gt;</code>
+          and
+          <code>&lt;samp&gt;</code>
+        </li>
+        <li>
+          Abbreviations:
+          <code>&lt;abbr&gt;</code>
+          </li>
+        <li>
+          Notations:
+          <code>&lt;mark&gt;</code>
+          <code>&lt;s&gt;</code>
+          <code>&lt;del&gt;</code>
+          and
+          <code>&lt;ins&gt;</code>
+        </li>
+        <li>
+          Quotes:
+          <code>&lt;q&gt;</code>
+          and
+          <code>&lt;cite&gt;</code>
+        </li>
+      </ul>
+      <h2>How it looks</h2>
+      <p>
+        The content you're reading is styled using <code>wysiwyg.css</code> and the default parameters.
+      </p>
+      <p>
+        You can have paragraphs,
+        with <a href="#">links</a>,
+        <strong>important</strong> or <em>emphasised</em> words,
+        <code>code snippets</code>,
+        <abbr title="abbreviations">abbr</abbr>,
+        <q>short quotes</q>,
+        <cite>citations</cite>,
+        <mark>highlighted text</mark>,
+        <kbd>keyboard inputs</kbd>,
+        <s>strikethrough</s>,
+        <del>deleted</del> and <ins>inserted</ins> elements,
+        <samp>sample text</samp>,
+        <small>small text</small>,
+        <time datetime="2001-05-15T19:00" title="2001-05-15T19:00">timestamps</time>,
+        words with<sub>sub</sub>and<sup>sup</sup>text
+      </p>
+      <p>You also have <strong>lists</strong>:</p>
+      <ul>
+        <li>
+          You can also use unordered lists
+          <ul>
+            <li>With nested items</li>
+            <li>That have a different bullet point</li>
+          </ul>
+        </li>
+        <li>With items that can spawn multiple lines</li>
+        <li>Like this one: lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at aliquet orci. Curabitur eget porttitor sem. Aenean eu convallis diam. Sed nibh massa, rhoncus id interdum pellentesque, congue ac erat.</li>
+      </ul>
+      <dl>
+        <dt>Name</dt>
+        <dd>Godzilla</dd>
+        <dt>Born</dt>
+        <dd>1952</dd>
+        <dt>Birthplace</dt>
+        <dd>Japan</dd>
+        <dt>Color</dt>
+        <dd>Green</dd>
+      </dl>
+      <blockquote>
+        You can also use the <code>blockquote</code> element with or without paragraphs.
+      </blockquote>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Instruments</th>
+            <th>Period</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th>Name</th>
+            <th>Instruments</th>
+            <th>Period</th>
+          </tr>
+        </tfoot>
+        <tbody>
+          <tr>
+            <td>John Lennon</td>
+            <td>Vocals, Guitar</td>
+            <td>1960–1969</td>
+          </tr>
+          <tr>
+            <td>Paul McCartney</td>
+            <td>Vocals, Bass Guitar</td>
+            <td>1960–1970</td>
+          </tr>
+          <tr>
+            <td>George Harrison</td>
+            <td>Guitar</td>
+            <td>1960–1970</td>
+          </tr>
+          <tr>
+            <td>Ringo Starr</td>
+            <td>Drums</td>
+            <td>1962–1970</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>

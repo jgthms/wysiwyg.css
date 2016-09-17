@@ -84,37 +84,77 @@ th {
 }
 
 .wysiwyg {
-  color: #333;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #333333;
   line-height: 1.6;
+  font-family: -apple-system, "Helvetica", "Arial", sans-serif;
 }
 
 .wysiwyg a {
   color: #2478ff;
+  text-decoration: none;
 }
 
-.wysiwyg a:visited {
-  color: #9524ff;
+.wysiwyg a:hover {
+  border-bottom: 1px solid;
+}
+
+.wysiwyg abbr {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+.wysiwyg cite {
+  font-style: italic;
+}
+
+.wysiwyg ins {
+  background-color: lime;
+  text-decoration: none;
+}
+
+.wysiwyg mark {
+  background-color: yellow;
+}
+
+.wysiwyg small {
+  font-size: 0.8em;
 }
 
 .wysiwyg strong {
-  color: #111;
+  color: #1a1a1a;
+  font-weight: 700;
 }
 
-.wysiwyg blockquote, .wysiwyg ol, .wysiwyg p, .wysiwyg pre, .wysiwyg ul {
-  margin-bottom: 1em;
+.wysiwyg sub,
+.wysiwyg sup {
+  font-size: 0.8em;
 }
 
-.wysiwyg blockquote:last-child, .wysiwyg ol:last-child, .wysiwyg p:last-child, .wysiwyg pre:last-child, .wysiwyg ul:last-child {
+.wysiwyg sub {
+  vertical-align: sub;
+}
+
+.wysiwyg sup {
+  vertical-align: super;
+}
+
+.wysiwyg time {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+.wysiwyg p, .wysiwyg dl, .wysiwyg ol, .wysiwyg ul, .wysiwyg blockquote, .wysiwyg pre, .wysiwyg table {
+  margin-bottom: 1.4em;
+}
+
+.wysiwyg p:last-child, .wysiwyg dl:last-child, .wysiwyg ol:last-child, .wysiwyg ul:last-child, .wysiwyg blockquote:last-child, .wysiwyg pre:last-child, .wysiwyg table:last-child {
   margin-bottom: 0;
 }
 
 .wysiwyg h1, .wysiwyg h2, .wysiwyg h3, .wysiwyg h4, .wysiwyg h5, .wysiwyg h6 {
-  color: #111;
-  font-weight: bold;
+  color: #1a1a1a;
+  font-weight: 700;
   line-height: 1.2;
-  margin-bottom: 1em;
-  margin-top: 1em;
 }
 
 .wysiwyg h1:first-child, .wysiwyg h2:first-child, .wysiwyg h3:first-child, .wysiwyg h4:first-child, .wysiwyg h5:first-child, .wysiwyg h6:first-child {
@@ -123,39 +163,89 @@ th {
 
 .wysiwyg h1 {
   font-size: 2.4em;
-  margin-bottom: 0.4166em;
+  margin-bottom: 1.16667em;
+  margin-top: 1.16667em;
+  line-height: 1;
 }
 
 .wysiwyg h2 {
-  font-size: 2em;
-  margin-bottom: 0.5em;
+  font-size: 1.8em;
+  margin-bottom: 0.77778em;
+  margin-top: 1.55556em;
+  line-height: 1.1;
 }
 
 .wysiwyg h3 {
-  font-size: 1.6em;
-  margin-bottom: 0.625em;
+  font-size: 1.4em;
+  margin-bottom: 1em;
+  margin-top: 2em;
 }
 
 .wysiwyg h4 {
   font-size: 1.2em;
-  margin-bottom: 0.8333em;
+  margin-bottom: 1.16667em;
+  margin-top: 2.33333em;
 }
 
 .wysiwyg h5 {
   font-size: 1.1em;
-  margin-bottom: 0.9091em;
+  margin-bottom: 1.27273em;
+  margin-top: 2.54545em;
 }
 
 .wysiwyg h6 {
   font-size: 1em;
-  margin-bottom: 1em;
+  margin-bottom: 1.4em;
+  margin-top: 2.8em;
+}
+
+.wysiwyg dd {
+  margin-left: 1em;
+}
+
+.wysiwyg ol,
+.wysiwyg ul {
+  list-style-position: outside;
+  margin-left: 1.2em;
+}
+
+.wysiwyg ol {
+  list-style-type: decimal;
+}
+
+.wysiwyg ul {
+  list-style-type: disc;
+}
+
+.wysiwyg ul ul {
+  list-style-type: circle;
+}
+
+.wysiwyg blockquote {
+  border-left: 4px solid #e6e6e6;
+  color: gray;
+  padding: 0.6em 1.2em;
+}
+
+.wysiwyg blockquote p {
+  margin-bottom: 0;
 }
 
 .wysiwyg code,
+.wysiwyg kbd,
+.wysiwyg samp,
 .wysiwyg pre {
-  background: #eee;
+  background-color: #f2f2f2;
+  color: #333333;
+  font-size: 0.9em;
   font-family: "Inconsolata", monospace;
-  font-size: 0.8em;
+}
+
+.wysiwyg code,
+.wysiwyg kbd,
+.wysiwyg samp {
+  padding: 0.2em 0.5em 0.3em;
+  vertical-align: baseline;
 }
 
 .wysiwyg pre {
@@ -164,12 +254,56 @@ th {
 }
 
 .wysiwyg pre code {
-  background: transparent;
+  background: none;
   font-size: 1em;
+}
+
+.wysiwyg table {
+  width: 100%;
+}
+
+.wysiwyg th,
+.wysiwyg td {
+  font-size: 1em;
+  padding: 0.6em 0.8em;
+  border: 1px solid #e6e6e6;
+  line-height: 1.2;
+}
+
+.wysiwyg thead tr,
+.wysiwyg tfoot tr {
+  background-color: #f2f2f2;
+}
+
+.wysiwyg thead th,
+.wysiwyg thead td,
+.wysiwyg tfoot th,
+.wysiwyg tfoot td {
+  font-size: 0.9em;
+  padding: 0.66667em 0.88889em;
+  color: gray;
+}
+
+.wysiwyg tbody tr {
+  background-color: white;
+}
+
+.wysiwyg tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.wysiwyg tbody tr:hover {
+  background-color: whitesmoke;
 }
 
 body {
   margin: 0 auto;
-  max-width: 640px;
+  max-width: 780px;
   padding: 20px;
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    padding: 40px;
+  }
 }
