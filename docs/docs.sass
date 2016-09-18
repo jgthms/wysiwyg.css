@@ -1,5 +1,5 @@
 @import "../node_modules/minireset.css/minireset.sass"
-// @import "../themes/default.sass"
+@import "../themes/default.sass"
 @import "../wysiwyg.sass"
 
 $orange: #ff5724
@@ -15,7 +15,6 @@ $text-strong: hsl(0, 0%, 14%)
 
 $family-monospace: "Inconsolata", monospace
 $family-primary: "Karla", "Roboto", "Helvetica", "Arial", sans-serif
-$family-secondary: "Helvetica", "Arial", sans-serif
 
 =selection($current-selector: false)
   @if $current-selector
@@ -42,27 +41,15 @@ html
 
 body
   color: $text
-  color: skyblue
-  font-family: $family-secondary
+  font-family: $family-primary
   font-size: 1rem
 
 strong, h1, h2, h3, h4, h5, h6
   color: $text-strong
-  color: $orange
-
-a
-  color: $green
-
-// a:visited
-//   color: $purple
 
 svg
   height: auto
   max-width: 100%
-
-.header,
-.nav
-  font-family: $family-primary
 
 .header
   margin: 0 auto 40px
@@ -115,6 +102,13 @@ svg
   text-align: center
 
 .button
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+.button
   background-color: $blue
   color: white
   line-height: 16px
@@ -160,8 +154,8 @@ svg
 .wysiwyg
   background: white
   margin: 24px auto 0
-  max-width: 720px
-  padding: 20px
+  max-width: 42rem
+  padding: 1rem
   position: relative
   &:before
     background: $text
@@ -176,6 +170,9 @@ svg
     position: absolute
     top: -24px
     vertical-align: top
+  td
+    code
+      white-space: nowrap
 
 .fork-me
   display: none
@@ -187,16 +184,9 @@ svg
   img
     display: block
 
-.button
-  -webkit-touch-callout: none
-  -webkit-user-select: none
-  -moz-user-select: none
-  -ms-user-select: none
-  user-select: none
-
 @media screen and (min-width: 400px)
   .wysiwyg
-    padding: 40px
+    padding: 2rem
 
 @media screen and (min-width: 600px)
   .subtitle
@@ -213,7 +203,7 @@ svg
   .or
     margin: 0 20px
   .wysiwyg
-    padding: 60px
+    padding: 4rem
 
 @media screen and (min-width: 800px)
   html

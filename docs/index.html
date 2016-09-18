@@ -52,7 +52,7 @@
         <code><a href="https://github.com/jgthms/wysiwyg.css">wysiwyg.css</a></code> file is a simple <strong>collection of styles</strong> targeted at HTML elements generated from a <abbr title="What You See Is What You Get">WYSIWYG</abbr> editor (like TinyMCE) or Markdown.
       </p>
       <p>
-        Its purpose and features are:
+        Its purpose are:
       </p>
       <ul>
         <li>
@@ -67,6 +67,12 @@
       </ul>
       <p>
         As a matter of fact, <code>wysiwyg.css</code> supports <a href="#">themes</a>.
+      </p>
+      <h2>Example</h2>
+      <p>
+        This whole white block of content only uses a single CSS class on its container.
+        <br>
+        Everything inside are HTML elements with no additional class.
       </p>
       <h2>How it works</h2>
       <p>
@@ -138,7 +144,7 @@
       </ul>
       <h2>How it looks</h2>
       <p>
-        The content you're reading is styled using <code>wysiwyg.css</code> and the default parameters.
+        The content you're reading is styled using <code>wysiwyg.css</code> with its default parameters.
       </p>
       <p>
         You can have paragraphs,
@@ -170,7 +176,7 @@
               With nested items
               <ul>
                 <li>
-                  That have a different bullet points
+                  That have a different bullet point
                   <ul>
                     <li>
                       At each level
@@ -297,24 +303,91 @@
           </tr>
         </tbody>
       </table>
-      <h2>Options</h2>
+      <h2>Customisation</h2>
       <p>
         To provide flexibility, <code>wysiwyg.css</code> is written in <a href="#">Sass</a> and comes with a list of <strong>variables</strong> and <strong>options.</strong>
+      </p>
+      <h3>Variables</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Default value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th colspan="2">Colours</th></tr>
+          <tr><td><code>$blue</code></td><td><code>#2478ff</code></td></tr>
+          <tr><td><code>$pink</code></td><td><code>#ff2450</code></td></tr>
+          <tr><td><code>$purple</code></td><td><code>#9524ff</code></td></tr>
+          <tr><td><code>$grey-light</code></td><td><code>hsl(0, 0%, 50%)</code></td></tr>
+          <tr><td><code>$grey</code></td><td><code>hsl(0, 0%, 20%)</code></td></tr>
+          <tr><td><code>$grey-dark</code></td><td><code>hsl(0, 0%, 10%)</code></td></tr>
+          <tr><td><code>$background</code></td><td><code>hsl(0, 0%, 95%)</code></td></tr>
+          <tr><td><code>$border</code></td><td><code>hsl(0, 0%, 90%)</code></td></tr>
+          <tr><td><code>$text</code></td><td><code>$grey</code></td></tr>
+          <tr><td><code>$text-code</code></td><td><code>$pink</code></td></tr>
+          <tr><td><code>$text-strong</code></td><td><code>$grey-dark</code></td></tr>
+          <tr><td><code>$text-light</code></td><td><code>$grey-light</code></td></tr>
+          <tr><td><code>$text-headings</code></td><td><code>$grey-dark</code></td></tr>
+          <tr><td><code>$text-blockquote</code></td><td><code>$grey-light</code></td></tr>
+          <tr><td><code>$link</code></td><td><code>$blue</code></td></tr>
+          <tr><td><code>$link-hover</code></td><td><code>$blue</code></td></tr>
+          <tr><td><code>$link-visited</code></td><td><code>$purple</code></td></tr>
+          <tr><td><code>$background-code</code></td><td><code>$background</code></td></tr>
+          <tr><td><code>$background-ins</code></td><td><code>lime</code></td></tr>
+          <tr><td><code>$background-mark</code></td><td><code>yellow</code></td></tr>
+          <tr><td><code>$table-background</code></td><td><code>hsl(0, 0%, 100%)</code></td></tr>
+          <tr><td><code>$table-background-even</code></td><td><code>hsl(0, 0%, 98%)</code></td></tr>
+          <tr><td><code>$table-background-hover</code></td><td><code>hsl(0, 0%, 96%)</code></td></tr>
+          <tr><td><code>$table-border</code></td><td><code>$border</code></td></tr>
+          <tr><td><code>$table-thead</code></td><td><code>$grey-dark</code></td></tr>
+          <tr><th colspan="2">Spacing</th></tr>
+          <tr><td><code>$line-height</code></td><td><code>1.6</code></td></tr>
+          <tr><td><code>$margin</code></td><td><code>1.4em</code></td></tr>
+          <tr><th colspan="2">Typography</th></tr>
+          <tr><td><code>$family-wysiwyg</code></td><td><pre>-apple-system, "Helvetica", "Arial", sans-serif</pre></td></tr>
+          <tr><td><code>$family-code</code></td><td><pre>"Inconsolata", "Consolas", "Monaco", monospace</pre></td></tr>
+          <tr><td><code>$weight-strong</code></td><td><code>700</code></td></tr>
+          <tr><td><code>$weight-headings</code></td><td><code>700</code></td></tr>
+        </tbody>
+      </table>
+      <h3>Options</h3>
+      <p>
+        By <strong>default</strong>, all options are set to <code>false</code>.
       </p>
       <table>
         <thead>
           <tr>
-            <th>Variable</th>
-            <th>Default value</th>
+            <th>Option</th>
+            <th>If set to <code>true</code></th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>
+              <code>$closer-lists</code>
+            </td>
+            <td>
+              <p>Brings <strong>lists</strong> closer to the <strong>paragraph</strong> they <em>immediately</em> follow</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
               <code>$custom-colors</code>
             </td>
             <td>
-              <code>false</code>
+              <p>Applies the <strong>color</strong> variables to the content:</p>
+              <ul>
+                <li><code>$text</code></li>
+                <li><code>$link</code></li>
+                <li><code>$text-strong</code></li>
+                <li><code>$text-headings</code></li>
+                <li><code>$text-blockquote</code></li>
+                <li><code>$text-code</code></li>
+                <li><code>$text-light</code></li>
+                <li><code>$table-thead</code></li>
+              </ul>
             </td>
           </tr>
           <tr>
@@ -322,7 +395,11 @@
               <code>$custom-fonts</code>
             </td>
             <td>
-              <code>false</code>
+              <p>Applies the <strong>font-family</strong> variables to the content:</p>
+              <ul>
+                <li><code>$family-wysiwyg</code></li>
+                <li><code>$family-code</code></li>
+              </ul>
             </td>
           </tr>
           <tr>
@@ -330,7 +407,7 @@
               <code>$font-smoothing</code>
             </td>
             <td>
-              <code>false</code>
+              <p>Applies <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-smooth">font smoothing</a> to non-code content</p>
             </td>
           </tr>
           <tr>
@@ -338,15 +415,7 @@
               <code>$heading-borders</code>
             </td>
             <td>
-              <code>false</code>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <code>$list-space</code>
-            </td>
-            <td>
-              <code>false</code>
+              <p>Adds <strong>bottom borders</strong> to <code>h1</code> and <code>h2</code></p>
             </td>
           </tr>
           <tr>
@@ -354,7 +423,7 @@
               <code>$show-underline</code>
             </td>
             <td>
-              <code>false</code>
+              <p><strong>Underlines</strong> links</p>
             </td>
           </tr>
           <tr>
@@ -362,7 +431,7 @@
               <code>$striped-rows</code>
             </td>
             <td>
-              <code>false</code>
+              <p>Adds striped rows to <strong>tables</strong></p>
             </td>
           </tr>
           <tr>
@@ -370,7 +439,7 @@
               <code>$visited-links</code>
             </td>
             <td>
-              <code>false</code>
+              <p>Applies the <code>$link-visited</code> color to <strong>visited links</strong></p>
             </td>
           </tr>
         </tbody>
