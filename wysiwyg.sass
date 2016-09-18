@@ -1,3 +1,4 @@
+/*! wysiwyg.css v0.0.2 | MIT License | github.com/jgthms/wysiwyg.css */
 // Colours
 $blue: #2478ff !default
 $pink: #ff2450 !default
@@ -81,15 +82,15 @@ $visited-links: false !default
     -webkit-font-smoothing: antialiased
   // Inlines
   a
+    text-decoration: none
     @if $custom-colors
       color: $link
       @if $visited-links
         &:visited
           color: $link-visited
     @if $show-underline
-      text-decoration: underline
+      border-bottom: 1px solid
     @else
-      text-decoration: none
       &:hover
         border-bottom: 1px solid
   abbr
