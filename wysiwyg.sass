@@ -1,62 +1,278 @@
-$blue: #2478ff
-$purple: #9524ff
+/*! wysiwyg.css v0.0.2 | MIT License | github.com/jgthms/wysiwyg.css */
+// Colours
+$blue: #2478ff !default
+$pink: #ff2450 !default
+$purple: #9524ff !default
 
-$grey-light: #777
-$grey: #333
-$grey-dark: #111
+$grey-light: hsl(0, 0%, 50%) !default
+$grey: hsl(0, 0%, 20%) !default
+$grey-dark: hsl(0, 0%, 10%) !default
 
+$background: hsl(0, 0%, 95%) !default
+$border: hsl(0, 0%, 90%) !default
+
+$text: $grey !default
+$text-code: $pink !default
+$text-strong: $grey-dark !default
+$text-light: $grey-light !default
+$text-headings: $grey-dark !default
+$text-blockquote: $grey-light !default
+
+$link: $blue !default
+$link-hover: $blue !default
+$link-visited: $purple !default
+
+$background-code: $background !default
+$background-ins: lime !default
+$background-mark: yellow !default
+
+$table-background: hsl(0, 0%, 100%) !default
+$table-background-even: hsl(0, 0%, 98%) !default
+$table-background-hover: hsl(0, 0%, 96%) !default
+$table-border: $border !default
+$table-thead: $grey-dark !default
+
+// Spacing
+$line-height: 1.6 !default
+$margin: 1.4em !default
+
+// Typography
+$family-wysiwyg: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default
+$family-code: "Inconsolata", "Consolas", "Monaco", monospace !default
+
+$weight-strong: 700 !default
+$weight-headings: 700 !default
+
+// Options
+$closer-lists: false !default
+$custom-colors: false !default
+$custom-fonts: false !default
+$font-smoothing: false !default
+$heading-borders: false !default
+$show-underline: false !default
+$table-hover: false !default
+$table-striped: false !default
+$visited-links: false !default
+
+// Mixins
+=cell($font-size)
+  font-size: #{$font-size}em
+  padding: (($margin / 2) / $font-size)
+
+=heading($font-size, $with-border: false, $top-space: false)
+  font-size: #{$font-size}em
+  margin-bottom: ($margin / $font-size)
+  @if $top-space
+    margin-top: ($margin * 2 / $font-size)
+  @else
+    margin-top: ($margin / $font-size)
+  @if $heading-borders and $with-border
+    border-bottom: 1px solid $border
+    padding-bottom: ($margin / $font-size)
+
+// Styles
 .wysiwyg
-  color: $grey
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif
-  line-height: 1.6
+  line-height: $line-height
+  @if $custom-colors
+    color: $text
+  @if $custom-fonts
+    font-family: $family-wysiwyg
+  @if $font-smoothing
+    -moz-osx-font-smoothing: grayscale
+    -webkit-font-smoothing: antialiased
   // Inlines
   a
-    color: $blue
-    &:visited
-      color: $purple
+    text-decoration: none
+    @if $custom-colors
+      color: $link
+      @if $visited-links
+        &:visited
+          color: $link-visited
+    @if $show-underline
+      border-bottom: 1px solid
+    @else
+      &:hover
+        border-bottom: 1px solid
+  abbr
+    border-bottom: 1px dotted
+    cursor: help
+  cite
+    font-style: italic
+  hr
+    background: $border
+    border: none
+    display: block
+    height: 1px
+    margin-bottom: $margin
+    margin-top: $margin
+  img
+    vertical-align: text-bottom
+  ins
+    background-color: $background-ins
+    text-decoration: none
+  mark
+    background-color: $background-mark
+  small
+    font-size: 0.8em
   strong
-    color: $grey-dark
+    font-weight: $weight-strong
+    @if $custom-colors
+      color: $text-strong
+  sub,
+  sup
+    font-size: 0.8em
+  sub
+    vertical-align: sub
+  sup
+    vertical-align: super
   // Blocks
-  blockquote, ol, p, pre, ul
-    margin-bottom: 1em
+  p, dl, ol, ul, blockquote, pre, table
+    margin-bottom: $margin
     &:last-child
       margin-bottom: 0
-  // Headers
+  // Headings
   h1, h2, h3, h4, h5, h6
-    color: $grey-dark
-    font-weight: bold
+    font-weight: $weight-headings
     line-height: 1.2
-    margin-bottom: 1em
-    margin-top: 1em
     &:first-child
       margin-top: 0
+    @if $custom-colors
+      color: $text-headings
   h1
-    font-size: 2.4em
-    margin-bottom: 0.4166em
+    +heading(2.4, true)
+    line-height: 1
   h2
-    font-size: 2em
-    margin-bottom: 0.5em
+    +heading(1.6, true, true)
+    line-height: 1.1
   h3
-    font-size: 1.6em
-    margin-bottom: 0.625em
+    +heading(1.3)
   h4
-    font-size: 1.2em
-    margin-bottom: 0.8333em
+    +heading(1.2)
   h5
-    font-size: 1.1em
-    margin-bottom: 0.9091em
+    +heading(1.1)
   h6
-    font-size: 1em
-    margin-bottom: 1em
+    +heading(1)
+  // Paragraphs
+  @if $closer-lists
+    p
+      & + dl,
+      & + ol,
+      & + ul
+        margin-top: -$margin
+  // Lists
+  dd
+    margin-left: $margin
+  ol,
+  ul
+    list-style-position: outside
+    margin-left: $margin
+  ol
+    list-style-type: decimal
+    ol
+      list-style-type: lower-alpha
+      ol
+        list-style-type: lower-roman
+        ol
+          list-style-type: lower-greek
+          ol
+            list-style-type: decimal
+            ol
+              list-style-type: lower-alpha
+  ul
+    list-style-type: disc
+    ul
+      list-style-type: circle
+      ul
+        list-style-type: square
+        ul
+          list-style-type: circle
+          ul
+            list-style-type: disc
+            ul
+              list-style-type: circle
+  // Blockquote
+  blockquote
+    border-left: 4px solid $border
+    padding: 0.6em 1.2em
+    @if $custom-colors
+      color: $text-blockquote
+    p
+      margin-bottom: 0
   // Code
   code,
+  kbd,
+  samp,
   pre
-    background: #eee
-    font-family: "Inconsolata", monospace
+    -moz-osx-font-smoothing: auto
+    -webkit-font-smoothing: auto
+    background-color: $background-code
+    color: $text
     font-size: 0.8em
+    @if $custom-fonts
+      font-family: $family-code
+  code,
+  kbd,
+  samp
+    border-radius: 2px
+    line-height: $line-height / 0.8
+    padding: 0.2em 0.5em 0.3em
+    vertical-align: baseline
+    @if $custom-colors
+      color: $text-code
   pre
     overflow: auto
     padding: 1em 1.2em
     code
-      background: transparent
+      background: none
       font-size: 1em
+      line-height: 1em
+  // Figure
+  figure
+    margin-bottom: $margin * 2
+    text-align: center
+    &:first-child
+      margin-top: 0
+    &:last-child
+      margin-bottom: 0
+  figcaption
+    font-size: 0.8em
+    margin-top: $margin / 1.6
+    @if $custom-colors
+      color: $text-light
+  // Table
+  table
+    width: 100%
+    pre
+      white-space: pre-wrap
+  th,
+  td
+    +cell(1)
+    border: 1px solid $table-border
+    line-height: 1.4
+  thead,
+  tfoot
+    tr
+      @if $table-striped
+        background-color: $table-border
+      @else
+        background-color: $table-background-hover
+    th,
+    td
+      +cell(0.9)
+      @if $custom-colors
+        color: $table-thead
+      code
+        background-color: $table-background
+  tbody
+    tr
+      background-color: $table-background
+      @if $table-striped
+        &:nth-child(even)
+          background-color: $table-background-even
+        @if $table-hover
+          &:hover
+            background-color: $table-background-hover
+      @else
+        @if $table-hover
+          &:hover
+            background-color: $table-background-even

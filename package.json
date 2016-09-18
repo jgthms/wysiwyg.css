@@ -4,12 +4,12 @@
   "description": "A tiny CSS for generated HTML or Markdown content",
   "main": "wysiwyg.css",
   "scripts": {
-    "autoprefix": "postcss --use autoprefixer --output wysiwyg.css wysiwyg.css",
-    "build": "npm run clean && npm run build-wysiwyg && npm run autoprefix",
-    "build-main": "node-sass --output-style expanded --output ./ main.sass --outFile main.css",
-    "build-wysiwyg": "node-sass --output-style expanded --output ./ wysiwyg.sass --outFile wysiwyg.css",
-    "clean": "rm -rf wysiwyg.css",
-    "start": "npm run build-main -- --watch"
+    "build": "npm run build-clean && npm run build-wysiwyg && npm run build-autoprefix",
+    "build-autoprefix": "postcss --use autoprefixer --output wysiwyg.css wysiwyg.css",
+    "build-clean": "rm -rf wysiwyg.css",
+    "build-wysiwyg": "node-sass --output-style compressed wysiwyg.sass wysiwyg.css",
+    "docs": "node-sass --output-style compressed docs/docs.sass docs/docs.css",
+    "start": "npm run docs -- --watch"
   },
   "repository": {
     "type": "git",
@@ -33,5 +33,10 @@
     "minireset.css": "0.0.2",
     "node-sass": "^3.9.3",
     "postcss-cli": "^2.6.0"
-  }
+  },
+  "files": [
+    "themes",
+    "wysiwyg.css",
+    "wysiwyg.sass"
+  ]
 }

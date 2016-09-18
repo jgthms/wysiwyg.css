@@ -1,0 +1,217 @@
+@import "../node_modules/minireset.css/minireset.sass"
+@import "../themes/default.sass"
+@import "../wysiwyg.sass"
+
+$orange: #ff5724
+$yellow: #ffd324
+$green: #24ff70
+$cyan: #24ffde
+$blue: #2478ff
+$purple: #9524ff
+
+$background: hsl(0, 0%, 86%)
+$text: hsl(0, 0%, 29%)
+$text-strong: hsl(0, 0%, 14%)
+
+$family-monospace: "Inconsolata", monospace
+$family-primary: "Karla", "Roboto", "Helvetica", "Arial", sans-serif
+
+=selection($current-selector: false)
+  @if $current-selector
+    &::-moz-selection
+      @content
+    &::selection
+      @content
+  @else
+    \::-moz-selection
+      @content
+    \::selection
+      @content
+
+html
+  -moz-osx-font-smoothing: grayscale
+  -webkit-font-smoothing: antialiased
+  background-color: $background
+  font-size: 16px
+  min-width: 300px
+  min-width: 320px
+  overflow-x: hidden
+  overflow-y: scroll
+  text-rendering: optimizeLegibility
+
+body
+  color: $text
+  font-family: $family-primary
+  font-size: 1rem
+
+strong, h1, h2, h3, h4, h5, h6
+  color: $text-strong
+
+svg
+  height: auto
+  max-width: 100%
+
+.header
+  margin: 0 auto 40px
+  max-width: 640px
+  position: relative
+  text-align: center
+
+.mark
+  margin: 0 20px
+  position: relative
+  z-index: 1
+
+.w
+  position: relative
+
+.type
+  left: 0
+  position: absolute
+  top: 0
+
+.title
+  left: 50%
+  position: absolute
+  top: 0
+  transform: translateX(-50%)
+
+.subtitle
+  font-size: 24px
+  margin: 20px 20px 0
+  strong
+    color: $blue
+    +selection(true)
+      background-color: $text-strong
+      color: white
+  +selection(true)
+    background-color: $blue
+    color: white
+
+.nav
+  font-size: 16px
+  margin: 40px
+  text-align: center
+
+.button,
+.npm
+  border-radius: 3px
+  display: block
+  height: 60px
+  line-height: 20px
+  text-align: center
+
+.button
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+.button
+  background-color: $blue
+  color: white
+  line-height: 16px
+  padding-top: 14px
+  text-decoration: none
+  transition: background 86ms
+  span
+    display: block
+    strong
+      color: white
+  small
+    opacity: 0.5
+  &:hover
+    background-color: darken($blue, 10%)
+  &:active
+    box-shadow: inset 0 1px 2px rgba(black, 0.29)
+  +selection(true)
+    background-color: white
+    color: $blue
+
+.or
+  margin: 10px 0
+  opacity: 0.5
+  +selection(true)
+    background-color: $text-strong
+    color: white
+
+.npm
+  background-color: $yellow
+  color: $text-strong
+  font-family: $family-monospace
+  font-size: 14px
+  padding-top: 20px
+  +selection(true)
+    background-color: $text-strong
+    color: $yellow
+
+.github
+  height: 30px
+  margin-bottom: 40px
+  text-align: center
+
+.wysiwyg
+  background: white
+  margin: 24px auto 0
+  max-width: 42rem
+  padding: 1rem
+  position: relative
+  &:before
+    background: $text
+    color: white
+    content: '<main class="wysiwyg">'
+    display: inline-block
+    font-family: $family-monospace
+    font-size: 12px
+    left: 0
+    line-height: 16px
+    padding: 3px 8px 5px
+    position: absolute
+    top: -24px
+    vertical-align: top
+  td
+    code
+      white-space: nowrap
+
+.fork-me
+  display: none
+  height: 149px
+  position: fixed
+  right: 0
+  top: 0
+  width: 149px
+  img
+    display: block
+
+@media screen and (min-width: 400px)
+  .wysiwyg
+    padding: 2rem
+
+@media screen and (min-width: 600px)
+  .subtitle
+    font-size: 28px
+    margin-left: 10px
+    margin-right: 10px
+  .nav
+    align-items: center
+    display: flex
+    justify-content: center
+  .button,
+  .npm
+    width: 260px
+  .or
+    margin: 0 20px
+  .wysiwyg
+    padding: 4rem
+
+@media screen and (min-width: 800px)
+  html
+    font-size: 18px
+  .wysiwyg
+    margin-top: 0
+    &:before
+      left: -12px
+      top: -12px
+  .fork-me
+    display: block
