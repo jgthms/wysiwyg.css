@@ -40,8 +40,8 @@ $weight-strong: 700
 $weight-headings: 700
 
 // Options
-$inherit-colors: false
-$inherit-fonts: false
+$custom-colors: false
+$custom-fonts: false
 $heading-borders: false
 $show-underline: false
 $visited-links: false
@@ -52,7 +52,7 @@ $visited-links: false
   padding: (0.6em / $font-size) (0.8em / $font-size)
 
 =color($color)
-  @if not ($inherit-colors)
+  @if ($custom-colors)
     color: $color
 
 =heading($font-size, $with-border: false)
@@ -67,7 +67,7 @@ $visited-links: false
 .wysiwyg
   +color($text)
   line-height: 1.6
-  @if not ($inherit-fonts)
+  @if ($custom-fonts)
     font-family: $family-primary
   // Inlines
   a
@@ -186,8 +186,7 @@ $visited-links: false
   pre
     background-color: $background
     color: $text-code
-    font-size: 0.9em
-    @if not ($inherit-fonts)
+    @if ($custom-fonts)
       font-family: $family-monospace
   code,
   kbd,
@@ -199,7 +198,6 @@ $visited-links: false
     padding: 1em 1.2em
     code
       background: none
-      font-size: 1em
   // Figure
   figure
     margin-bottom: $margin * 2

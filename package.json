@@ -6,10 +6,10 @@
   "scripts": {
     "autoprefix": "postcss --use autoprefixer --output wysiwyg.css wysiwyg.css",
     "build": "npm run clean && npm run build-wysiwyg && npm run autoprefix",
-    "build-main": "node-sass --output-style expanded --output ./ main.sass --outFile main.css",
-    "build-wysiwyg": "node-sass --output-style expanded --output ./ wysiwyg.sass --outFile wysiwyg.css",
+    "build-docs": "node-sass --output-style compressed docs/docs.sass docs/docs.css",
+    "build-wysiwyg": "node-sass --output-style expanded wysiwyg.sass wysiwyg.css",
     "clean": "rm -rf wysiwyg.css",
-    "start": "npm run build-main -- --watch"
+    "start": "npm run build-docs -- --watch"
   },
   "repository": {
     "type": "git",
