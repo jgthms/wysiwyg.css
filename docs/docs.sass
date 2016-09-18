@@ -75,6 +75,7 @@ svg
 
 .title
   left: 50%
+  opacity: 0
   position: absolute
   top: 0
   transform: translateX(-50%)
@@ -173,9 +174,6 @@ svg
     position: absolute
     top: -24px
     vertical-align: top
-  td
-    code
-      white-space: nowrap
 
 .fork-me
   display: none
@@ -192,6 +190,7 @@ svg
   max-width: 42rem
   padding: 40px
   .button
+    padding-top: 12px
     &.is-twitter
       background: $twitter
       &:hover
@@ -200,6 +199,7 @@ svg
       display: block
       font-size: 0.8em
       font-style: normal
+      opacity: 0.5
     &.is-facebook
       background: $facebook
       margin-top: 20px
@@ -247,6 +247,10 @@ svg
     display: block
 
 @media screen and (min-width: 1000px)
+  .wysiwyg
+    td
+      code
+        white-space: nowrap
   .share
     bottom: 10px
     display: block
