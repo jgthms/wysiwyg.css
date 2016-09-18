@@ -13,6 +13,7 @@ $facebook: #3b5998
 $twitter: #55acee
 
 $background: hsl(0, 0%, 86%)
+$text-light: hsl(0, 0%, 71%)
 $text: hsl(0, 0%, 29%)
 $text-strong: hsl(0, 0%, 14%)
 
@@ -34,7 +35,7 @@ $family-primary: "Karla", "Roboto", "Helvetica", "Arial", sans-serif
 html
   -moz-osx-font-smoothing: grayscale
   -webkit-font-smoothing: antialiased
-  background-color: $background
+  background: white
   font-size: 16px
   min-width: 300px
   min-width: 320px
@@ -84,7 +85,6 @@ svg
   font-size: 24px
   margin: 20px 20px 0
   strong
-    color: $blue
     +selection(true)
       background-color: $text-strong
       color: white
@@ -156,7 +156,7 @@ svg
   text-align: center
 
 .wysiwyg
-  background: white
+  box-shadow: 0 0 0 1px $text
   margin: 24px auto 0
   max-width: 42rem
   padding: 1rem
@@ -184,6 +184,22 @@ svg
   width: 149px
   img
     display: block
+
+.footer
+  color: $text-light
+  margin: 40px
+  margin-bottom: 0
+  text-align: center
+  a
+    border-radius: 3px
+    color: $blue
+    padding: 2px 4px 4px
+    text-decoration: none
+    transition: 86ms
+    transition-property: background, color
+    &:hover
+      background: $blue
+      color: white
 
 .share
   margin: 0 auto
@@ -226,6 +242,9 @@ svg
     margin: 0 20px
   .wysiwyg
     padding: 4rem
+  .footer
+    margin: 1rem
+    margin-bottom: 0
   .share
     display: flex
     padding: 1rem
@@ -247,10 +266,15 @@ svg
     display: block
 
 @media screen and (min-width: 1000px)
+  html
+    padding-bottom: 4rem
   .wysiwyg
     td
       code
         white-space: nowrap
+  .footer
+    margin: 0
+    margin-top: 4rem
   .share
     bottom: 10px
     display: block
