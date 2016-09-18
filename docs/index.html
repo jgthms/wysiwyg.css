@@ -43,19 +43,30 @@
     </nav>
 
     <section class="github">
-      <iframe src="https://ghbtns.com/github-btn.html?user=jgthms&repo=bulma&type=star&count=true&size=large" frameborder="0" scrolling="0" width="150px" height="30px"></iframe>
-      <iframe src="https://ghbtns.com/github-btn.html?user=jgthms&repo=bulma&type=fork&count=false&size=large" frameborder="0" scrolling="0" width="80px" height="30px"></iframe>
+      <iframe src="https://ghbtns.com/github-btn.html?user=jgthms&repo=wysiwyg.css&type=star&count=false&size=large" frameborder="0" scrolling="0" width="80px" height="30px"></iframe>
+      <iframe src="https://ghbtns.com/github-btn.html?user=jgthms&repo=wysiwyg.css&type=fork&count=false&size=large" frameborder="0" scrolling="0" width="80px" height="30px"></iframe>
     </section>
 
     <main class="wysiwyg">
       <p>
-        <code>wysiwyg.css</code> file is a simple <strong>collection of styles</strong> targeted at HTML elements generated from a <abbr title="What You See Is What You Get">WYSIWYG</abbr> editor (like TinyMCE) or Markdown.
+        <code><a href="https://github.com/jgthms/wysiwyg.css">wysiwyg.css</a></code> file is a simple <strong>collection of styles</strong> targeted at HTML elements generated from a <abbr title="What You See Is What You Get">WYSIWYG</abbr> editor (like TinyMCE) or Markdown.
       </p>
       <p>
-        Its purpose are both <strong>readibility</strong> and <strong>simplicity</strong>.
+        Its purpose and features are:
       </p>
+      <ul>
+        <li>
+          <strong>readibility</strong>: both the spacing and colors are visually <em>balanced</em>
+        </li>
+        <li>
+          <strong>simplicity</strong>: you only need a <em>single</em> class to style all elements
+        </li>
+        <li>
+          <strong>extensibility</strong>: you can easily <em>customise</em> the output thanks to variables
+        </li>
+      </ul>
       <p>
-        And as <code>wysiwyg.css</code> is easily <strong>customisable</strong>, it also supports <a href="#">themes</a>.
+        As a matter of fact, <code>wysiwyg.css</code> supports <a href="#">themes</a>.
       </p>
       <h2>How it works</h2>
       <p>
@@ -66,6 +77,9 @@
   &lt;!-- Your generated HTML --&gt;
 &lt;/div&gt;
 </pre>
+      <p>
+        In order to blend in gracefully with your design, the <code>wysiwyg</code> container will <strong>inherit colors</strong> (for text, headings and links) and <strong>typography</strong> (font family, size and smoothing).
+      </p>
       <h2>What it styles</h2>
       <h3>Blocks</h3>
       <ul>
@@ -117,7 +131,6 @@
         <li>
           Other:
           <code>&lt;small&gt;</code>
-          <code>&lt;time&gt;</code>
           <code>&lt;sub&gt;</code>
           <code>&lt;sup&gt;</code>
           <code>&lt;hr&gt;</code>
@@ -141,8 +154,8 @@
         <del>deleted</del> and <ins>inserted</ins> elements,
         <samp>sample text</samp>,
         <small>small text</small>,
-        <time datetime="2001-05-15T19:00" title="2001-05-15T19:00">timestamps</time>,
-        words with<sub>sub</sub>and<sup>sup</sup>text
+        and
+        words with<sub>sub</sub>and<sup>sup</sup>text.
       </p>
       <p>
         You also have horizontal breaks.
@@ -288,6 +301,82 @@
       <p>
         To provide flexibility, <code>wysiwyg.css</code> is written in <a href="#">Sass</a> and comes with a list of <strong>variables</strong> and <strong>options.</strong>
       </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Variable</th>
+            <th>Default value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <code>$custom-colors</code>
+            </td>
+            <td>
+              <code>false</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>$custom-fonts</code>
+            </td>
+            <td>
+              <code>false</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>$font-smoothing</code>
+            </td>
+            <td>
+              <code>false</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>$heading-borders</code>
+            </td>
+            <td>
+              <code>false</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>$list-space</code>
+            </td>
+            <td>
+              <code>false</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>$show-underline</code>
+            </td>
+            <td>
+              <code>false</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>$striped-rows</code>
+            </td>
+            <td>
+              <code>false</code>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>$visited-links</code>
+            </td>
+            <td>
+              <code>false</code>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </main>
+
+    <a class="fork-me" href="https://github.com/jgthms/wysiwyg.css"><img src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub"></a>
   </body>
 </html>
