@@ -1,6 +1,6 @@
 {
   "name": "wysiwyg.css",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A tiny CSS for generated HTML or Markdown content",
   "main": "wysiwyg.css",
   "scripts": {
