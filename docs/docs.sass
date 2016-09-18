@@ -9,6 +9,9 @@ $cyan: #24ffde
 $blue: #2478ff
 $purple: #9524ff
 
+$facebook: #3b5998
+$twitter: #55acee
+
 $background: hsl(0, 0%, 86%)
 $text: hsl(0, 0%, 29%)
 $text-strong: hsl(0, 0%, 14%)
@@ -115,10 +118,10 @@ svg
   padding-top: 14px
   text-decoration: none
   transition: background 86ms
+  strong
+    color: white
   span
     display: block
-    strong
-      color: white
   small
     opacity: 0.5
   &:hover
@@ -184,6 +187,25 @@ svg
   img
     display: block
 
+.share
+  margin: 0 auto
+  max-width: 42rem
+  padding: 40px
+  .button
+    &.is-twitter
+      background: $twitter
+      &:hover
+        background: darken($twitter, 10%)
+    em
+      display: block
+      font-size: 0.8em
+      font-style: normal
+    &.is-facebook
+      background: $facebook
+      margin-top: 20px
+      &:hover
+        background: darken($facebook, 10%)
+
 @media screen and (min-width: 400px)
   .wysiwyg
     padding: 2rem
@@ -197,13 +219,21 @@ svg
     align-items: center
     display: flex
     justify-content: center
-  .button,
-  .npm
-    width: 260px
+    .button,
+    .npm
+      width: 260px
   .or
     margin: 0 20px
   .wysiwyg
     padding: 4rem
+  .share
+    display: flex
+    padding: 1rem
+    .button
+      flex: 1
+      &.is-facebook
+        margin-left: 1rem
+        margin-top: 0
 
 @media screen and (min-width: 800px)
   html
@@ -215,3 +245,17 @@ svg
       top: -12px
   .fork-me
     display: block
+
+@media screen and (min-width: 1000px)
+  .share
+    bottom: 10px
+    display: block
+    margin: 0
+    padding: 0
+    position: fixed
+    right: 10px
+    width: 200px
+    .button
+      &.is-facebook
+        margin-left: 0
+        margin-top: 10px
