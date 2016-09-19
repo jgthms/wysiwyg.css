@@ -8,6 +8,7 @@ $green: #24ff70
 $cyan: #24ffde
 $blue: #2478ff
 $purple: #9524ff
+$pink: #ff2450
 
 $facebook: #3b5998
 $twitter: #55acee
@@ -207,18 +208,23 @@ svg
   padding: 40px
   .button
     padding-top: 12px
-    &.is-twitter
-      background: $twitter
-      &:hover
-        background: darken($twitter, 10%)
+    &:not(:last-child)
+      margin-bottom: 20px
     em
       display: block
       font-size: 0.8em
       font-style: normal
       opacity: 0.5
+    &.is-me
+      background: $pink
+      &:hover
+        background: darken($pink, 10%)
+    &.is-twitter
+      background: $twitter
+      &:hover
+        background: darken($twitter, 10%)
     &.is-facebook
       background: $facebook
-      margin-top: 20px
       &:hover
         background: darken($facebook, 10%)
 
@@ -247,12 +253,12 @@ svg
     margin-bottom: 0
   .share
     display: flex
-    padding: 1rem
+    padding: 2rem 0
     .button
       flex: 1
-      &.is-facebook
-        margin-left: 1rem
-        margin-top: 0
+      &:not(:last-child)
+        margin-bottom: 0
+        margin-right: 2rem
 
 @media screen and (min-width: 800px)
   html
@@ -275,15 +281,15 @@ svg
   .footer
     margin: 0
     margin-top: 4rem
-  .share
-    bottom: 10px
-    display: block
-    margin: 0
-    padding: 0
-    position: fixed
-    right: 10px
-    width: 200px
-    .button
-      &.is-facebook
-        margin-left: 0
-        margin-top: 10px
+  // .share
+  //   bottom: 10px
+  //   display: block
+  //   margin: 0
+  //   padding: 0
+  //   position: fixed
+  //   right: 10px
+  //   width: 200px
+  //   .button
+  //     &:not(:last-child)
+  //       margin-bottom: 10px
+  //       margin-right: 0
