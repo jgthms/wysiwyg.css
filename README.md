@@ -2,7 +2,7 @@
 
 A tiny CSS for generated HTML or Markdown content, meant for:
 
-* **readibility**: both the spacing and colors are visually balanced
+* **readability**: both the spacing and colors are visually balanced
 * **simplicity**: you only need a single class to style all elements
 * **extensibility**: you can easily customise the output thanks to variables
 
