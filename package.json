@@ -28,7 +28,7 @@
     "url": "https://github.com/jgthms/wysiwyg.css/issues"
   },
   "homepage": "https://github.com/jgthms/wysiwyg.css#readme",
-  "dependencies": {
+  "devDependencies": {
     "autoprefixer": "^6.4.1",
     "minireset.css": "0.0.2",
     "node-sass": "^4.7.2",
